@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Гонец — курьерская доставка по городу. Документы, посылки, еда для бизнеса и частных заказов." />
+  <meta name="description" content="Гонец — доставка по Москве и области: посылки, бумаги, еда. Рассчитать цену и заказать без лишних формальностей." />
   <meta name="theme-color" content="#171a21" />
   <title>Гонец — курьерская доставка по городу</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
     <div class="container header__inner">
       <a href="#" class="logo" aria-label="Гонец — на главную">
         <span class="logo__mark" aria-hidden="true"><img src="assets/logo-gonets.svg" width="36" height="36" alt="" /></span>
-        Гонец
+        <span class="logo__text">Гонец</span>
       </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" id="nav-toggle">
         <span class="nav-toggle__bar"></span>
@@ -28,7 +28,7 @@
       </button>
       <nav class="nav" id="site-nav">
         <div class="nav__city">
-          <span class="nav__city-label">Город</span>
+          <span class="nav__city-label">Сейчас</span>
           <button type="button" class="nav__city-btn">Москва</button>
         </div>
         <a href="calculate/" class="nav__link">Калькулятор</a>
@@ -48,17 +48,17 @@
     <section class="hero" id="order">
       <div class="container hero__grid">
         <div class="hero__content">
-          <p class="hero__eyebrow">Курьерская доставка</p>
-          <h1 class="hero__title">Доставляем по городу быстро и бережно</h1>
-          <p class="hero__lead">Один сервис — для личных заказов и деловых задач. Документы, посылки, еда и товары для бизнеса.</p>
+          <p class="hero__eyebrow">Москва · МО</p>
+          <h1 class="hero__title">Когда нужно везти сегодня, а не «когда-нибудь»</h1>
+          <p class="hero__lead">Мы не обещаем «революцию логистики» — просто забираем и привозим: бумаги в другой офис, коробку другу, еду в офис. Вы вводите адреса — мы показываем цену и время.</p>
           <div class="hero__promo">
-            <span class="hero__promo-badge">Акция</span>
-            <p><strong>−30%</strong> на первую доставку по промокоду <strong class="hero__code">ГОНЕЦ</strong></p>
-            <p class="hero__promo-note">*скидка не более 500 ₽</p>
+            <span class="hero__promo-badge">Первый раз</span>
+            <p>Скидка <strong>30%</strong> по коду <strong class="hero__code">ГОНЕЦ</strong> — не больше 500 ₽ от суммы</p>
+            <p class="hero__promo-note">Если промокод не сработает — напишите в поддержку, разберёмся.</p>
           </div>
           <div class="hero__cta">
-            <a href="#callback" class="btn btn--primary btn--lg">Оформить доставку</a>
-            <a href="#business" class="btn btn--outline btn--lg">Условия для компаний</a>
+            <a href="calculate/" class="btn btn--primary btn--lg">Посчитать и заказать</a>
+            <a href="#business" class="btn btn--outline btn--lg">Для тех, кто возит часто</a>
           </div>
         </div>
         <div class="hero__visual" aria-hidden="true">
@@ -66,8 +66,8 @@
             <div class="hero__card-icon icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.5-1.2 8-5 8-10V7l-8-4-8 4v5c0 5 3.5 8.8 8 10z"/><path d="M12 22V12"/><path d="m2.6 7.2 8.4 4.2 8.4-4.2"/><path d="M12 11.4 12 3.6"/></svg>
             </div>
-            <p>От двери до двери</p>
-            <span class="hero__card-meta">от 30 минут</span>
+            <p>Забрали — привезли</p>
+            <span class="hero__card-meta">ориентир по городу ~от 30 мин</span>
           </div>
           <div class="hero__blob"></div>
         </div>
@@ -77,8 +77,8 @@
     <section class="section section--tint" id="calculator">
       <div class="container">
         <header class="section__head">
-          <h2 class="section__title">Рассчитать доставку</h2>
-          <p class="section__subtitle">Демо-калькулятор MVP: стоимость, ETA и тип курьера</p>
+          <h2 class="section__title">Сколько это стоит</h2>
+          <p class="section__subtitle">Ниже — примерный расчёт: расстояние, вес и как срочно нужно. Итог до оплаты может чуть сместиться, но порядок цифр увидите сразу.</p>
         </header>
         <div class="calc">
           <form class="calc__form" id="calc-form">
@@ -125,9 +125,9 @@
             <p class="calc__price">от 490 ₽</p>
             <p class="calc__eta">Курьер: пеший, ETA: 45-60 мин</p>
             <ul class="calc__meta">
-              <li>Комиссия сервиса включена</li>
-              <li>Точный расчет будет на шаге оплаты</li>
-              <li>Можно добавить COD и объявленную ценность</li>
+              <li>Сервис берёт свою долю — это уже в оценке</li>
+              <li>Финальную сумму подтвердим перед оплатой</li>
+              <li>Нужен наложенный платёж или страховка — отметьте в заказе</li>
             </ul>
           </aside>
         </div>
@@ -137,16 +137,16 @@
     <section class="stats">
       <div class="container stats__grid">
         <div class="stat">
-          <span class="stat__value">2 млн+</span>
-          <span class="stat__label">доставок в месяц по сети партнёров</span>
+          <span class="stat__value">~30 мин</span>
+          <span class="stat__label">типичный срок «в пути» по городу, если не пробка</span>
         </div>
         <div class="stat">
           <span class="stat__value">24/7</span>
-          <span class="stat__label">приём заказов онлайн</span>
+          <span class="stat__label">приём заявок — ночью тоже можно оставить</span>
         </div>
         <div class="stat">
-          <span class="stat__value">50+</span>
-          <span class="stat__label">городов присутствия</span>
+          <span class="stat__value">МСК+МО</span>
+          <span class="stat__label">дальше — по списку городов, смотрите в приложении</span>
         </div>
       </div>
     </section>
@@ -154,8 +154,8 @@
     <section class="section" id="services">
       <div class="container">
         <header class="section__head">
-          <h2 class="section__title">Что доставляем</h2>
-          <p class="section__subtitle">Выберите сценарий — подберём курьера и транспорт под задачу</p>
+          <h2 class="section__title">Что обычно везём</h2>
+          <p class="section__subtitle">Выберите ближе к вашему случаю — не нашли? Напишите в комментарии к заказу, разберёмся.</p>
         </header>
         <div class="cards">
           <article class="card">
@@ -163,48 +163,48 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/><path d="M3 4h2l1.5 12h12l2.2-8H7"/></svg>
             </div>
             <h3 class="card__title">Интернет‑заказы</h3>
-            <p class="card__text">Товары до 1,5 т, при необходимости — приём оплаты у получателя.</p>
-            <a href="#order" class="card__link">Подробнее</a>
+            <p class="card__text">До 1,5 т — если крупнее, заранее уточните. Наложка у двери — по желанию.</p>
+            <a href="calculate/" class="card__link">К калькулятору</a>
           </article>
           <article class="card">
             <div class="card__icon icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M6 12c0-4 3-7 6-7s6 3 6 7"/><path d="M8 9c2-1 4-1 6 0"/></svg>
             </div>
             <h3 class="card__title">Еда и продукты</h3>
-            <p class="card__text">Доставка в термосумках, чтобы блюда приехали в нужном виде.</p>
-            <a href="#order" class="card__link">Подробнее</a>
+            <p class="card__text">Термосумка, если надо — чтобы суп не остыл по дороге.</p>
+            <a href="calculate/" class="card__link">К калькулятору</a>
           </article>
           <article class="card">
             <div class="card__icon icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16"/><path d="M6 10a6 6 0 0112 0"/><path d="M8 10v11h8V10"/></svg>
             </div>
             <h3 class="card__title">Рестораны</h3>
-            <p class="card__text">Интеграции для кафе и доставка курьером до двери.</p>
-            <a href="#order" class="card__link">Подробнее</a>
+            <p class="card__text">Для кафе и кухонь — удобно, когда курьер знает, где вход для курьеров.</p>
+            <a href="#callback" class="card__link">Написать нам</a>
           </article>
           <article class="card">
             <div class="card__icon icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="18" rx="4"/><path d="M3 12h18"/></svg>
             </div>
             <h3 class="card__title">Лекарства</h3>
-            <p class="card__text">Срочная доставка из аптек и между точками по согласованию.</p>
-            <a href="#order" class="card__link">Подробнее</a>
+            <p class="card__text">Из аптеки или между офисами — с рецептурой всё как у вас в регламенте.</p>
+            <a href="calculate/" class="card__link">К калькулятору</a>
           </article>
           <article class="card">
             <div class="card__icon icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h6"/></svg>
             </div>
             <h3 class="card__title">Документы</h3>
-            <p class="card__text">Передача в папке, ожидание подписи и возврат в офис.</p>
-            <a href="#order" class="card__link">Подробнее</a>
+            <p class="card__text">Папка, подпись, «подождите минуту» — и обратно к вам.</p>
+            <a href="calculate/" class="card__link">К калькулятору</a>
           </article>
           <article class="card">
             <div class="card__icon icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13"/><path d="M3 12h18"/><path d="M12 8c0-3 2-5 4-5s4 2 4 5"/></svg>
             </div>
             <h3 class="card__title">Всё остальное</h3>
-            <p class="card__text">Электроника, цветы, одежда с примеркой — обсудим детали в заказе.</p>
-            <a href="#order" class="card__link">Подробнее</a>
+            <p class="card__text">Техника, цветы, одежда на примерку — напишите в заказе, что чувствительно к логистике.</p>
+            <a href="calculate/" class="card__link">К калькулятору</a>
           </article>
         </div>
       </div>
@@ -213,8 +213,8 @@
     <section class="section section--tint" id="business">
       <div class="container">
         <header class="section__head">
-          <h2 class="section__title">Доставляете регулярно?</h2>
-          <p class="section__subtitle">Для бизнеса — отдельные условия и персональный менеджер</p>
+          <h2 class="section__title">Если вам это не раз в месяц</h2>
+          <p class="section__subtitle">Для бизнеса — другие цифры, человек на связи и меньше сюрпризов в счёте</p>
         </header>
         <div class="features">
           <div class="feature">
@@ -222,34 +222,34 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><path d="M8 16V9"/><path d="M12 16V6"/><path d="M16 16v-5"/></svg>
             </div>
             <h3 class="feature__title">Специальные тарифы</h3>
-            <p class="feature__text">От 30 доставок в месяц — индивидуальный расчёт.</p>
+            <p class="feature__text">От примерно тридцати заказов в месяц — считаем отдельно, без «как у всех».</p>
           </div>
           <div class="feature">
             <div class="feature__icon icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0114 0"/></svg>
             </div>
             <h3 class="feature__title">Персональный менеджер</h3>
-            <p class="feature__text">Поможет с интеграцией и нестандартными маршрутами.</p>
+            <p class="feature__text">Живой контакт, если что-то пошло не так в пути.</p>
           </div>
           <div class="feature">
             <div class="feature__icon icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
             </div>
             <h3 class="feature__title">Удобные расчёты</h3>
-            <p class="feature__text">Постоплата и гибкие лимиты для проверенных клиентов.</p>
+            <p class="feature__text">Постоплата и лимиты — после того как сработались по объёму.</p>
           </div>
           <div class="feature">
             <div class="feature__icon icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h3 class="feature__title">Объявленная ценность</h3>
-            <p class="feature__text">Расширенные условия страхования отправлений.</p>
+            <p class="feature__text">Отдельные условия по объявленной ценности — не кладём в одну кучу с «коробкой неизвестно».</p>
           </div>
         </div>
         <div class="cta-banner" id="callback">
           <div class="cta-banner__text">
-            <h3 class="cta-banner__title">Первая доставка для юрлиц — за 1 ₽</h3>
-            <p class="cta-banner__sub">Оставьте заявку — перезвоним и подключим за один день.</p>
+            <h3 class="cta-banner__title">Юрлицам: первая поездка за символический рубль</h3>
+            <p class="cta-banner__sub">Оставьте телефон и название — перезвоним, без робота-опросника.</p>
           </div>
           <form class="cta-form" action="#" method="post">
             <label class="visually-hidden" for="company-name">Название компании</label>
@@ -265,8 +265,8 @@
     <section class="section" id="tariffs">
       <div class="container">
         <header class="section__head">
-          <h2 class="section__title">Как считаем стоимость</h2>
-          <p class="section__subtitle">Итог зависит от расстояния, веса и срочности — прозрачно до оплаты</p>
+          <h2 class="section__title">От чего зависит цена</h2>
+          <p class="section__subtitle">Расстояние, вес, срочность и кто везёт — пешком, на машине или грузовиком. Никаких скрытых строк мелким шрифтом в самом конце.</p>
         </header>
         <div class="tariffs">
           <ul class="tariffs__list">
@@ -274,7 +274,7 @@
             <li><strong>На авто</strong> — быстрее на длинных маршрутах и при крупном грузе.</li>
             <li><strong>Грузовой транспорт</strong> — для тяжёлых и объёмных отправлений.</li>
           </ul>
-          <p class="tariffs__note">Точную цену покажем после ввода адресов и параметров посылки в форме заказа.</p>
+          <p class="tariffs__note">Точную сумму увидите в форме заказа, когда введёте адреса и вес — можно не гадать.</p>
         </div>
       </div>
     </section>
@@ -282,13 +282,13 @@
     <section class="section" id="app">
       <div class="container">
         <header class="section__head">
-          <h2 class="section__title">Клиентское приложение в одном стиле с вебом</h2>
-          <p class="section__subtitle">Единые цвета, статусы и компоненты: пользователь не переучивается</p>
+          <h2 class="section__title">Телефон и сайт — как два окна в одну кухню</h2>
+          <p class="section__subtitle">Те же кнопки и статусы, чтобы не искать «где тут у вас трекинг».</p>
         </header>
         <div class="app-preview">
           <article class="phone-card">
-            <h3>Экран 1: Быстрый расчет</h3>
-            <p>Адреса, вес, тип доставки и цена в один экран.</p>
+            <h3>Расчёт</h3>
+            <p>Адреса, вес, как срочно — и цена на экране.</p>
             <div class="phone-card__mock">
               <span>Откуда → Куда</span>
               <span>Вес: 1.5 кг</span>
@@ -296,8 +296,8 @@
             </div>
           </article>
           <article class="phone-card">
-            <h3>Экран 2: Трекинг заказа</h3>
-            <p>Карта, таймлайн и чат в реальном времени.</p>
+            <h3>Где курьер</h3>
+            <p>Карта, шаги по заказу, можно написать курьеру или в поддержку.</p>
             <div class="phone-card__mock">
               <span>Статус: Курьер в пути</span>
               <span>Осталось: ~22 мин</span>
@@ -305,8 +305,8 @@
             </div>
           </article>
           <article class="phone-card">
-            <h3>Экран 3: История и повтор</h3>
-            <p>Повтор маршрута в один тап + промокоды.</p>
+            <h3>Старые заказы</h3>
+            <p>Повторить тот же маршрут — если часто везёте в одно место.</p>
             <div class="phone-card__mock">
               <span>Арбат → Сретенка</span>
               <span>Доставлено вчера</span>
@@ -324,20 +324,20 @@
         </header>
         <div class="faq">
           <details class="faq__item">
-            <summary class="faq__q">Как заказать курьера?</summary>
-            <p class="faq__a">Нажмите «Оформить доставку», укажите адреса, вес и желаемое время. После расчёта выберите способ оплаты — курьер будет назначен автоматически.</p>
+            <summary class="faq__q">С чего начать?</summary>
+            <p class="faq__a">Зайдите в калькулятор, вбейте откуда и куда, вес и срочность. Увидите цену — дальше контакты и оплата. Курьера подберёт система, вам не нужно звонить десяти людям.</p>
           </details>
           <details class="faq__item">
-            <summary class="faq__q">Можно вызвать к ко времени?</summary>
-            <p class="faq__a">Да. При оформлении выберите «Запланировать» и укажите интервал — подберём курьера под ваш график.</p>
+            <summary class="faq__q">Нужно к определённому часу</summary>
+            <p class="faq__a">При оформлении выберите «к времени» и интервал. Если город встал в пробку — честно сдвинем ожидание, не притворяясь, что «ещё две минуты».</p>
           </details>
           <details class="faq__item">
-            <summary class="faq__q">Как сэкономить?</summary>
-            <p class="faq__a">Используйте промокоды и при возможности интервал доставки побольше — так проще собрать оптимальный маршрут.</p>
+            <summary class="faq__q">Как не переплатить зря</summary>
+            <p class="faq__a">Промокод для первого раза — выше на странице. Если не горит — выберите более широкий интервал: иногда дешевле.</p>
           </details>
           <details class="faq__item">
-            <summary class="faq__q">Как оплатить?</summary>
-            <p class="faq__a">Физлица — картой или наличными при оформлении. Юрлица — по счёту, условия обсуждаются с менеджером.</p>
+            <summary class="faq__q">Чем платить</summary>
+            <p class="faq__a">Частному лицу — картой или наличными при заказе. Компании — по счёту, условия с менеджером, без «потом разберёмся».</p>
           </details>
         </div>
       </div>
@@ -349,8 +349,8 @@
   <footer class="footer">
     <div class="container footer__grid">
       <div class="footer__brand">
-        <a href="#" class="logo logo--footer"><span class="logo__mark" aria-hidden="true"><img src="assets/logo-gonets.svg" width="32" height="32" alt="" /></span>Гонец</a>
-        <p class="footer__tagline">Курьерская доставка по городу</p>
+        <a href="#" class="logo logo--footer"><span class="logo__mark" aria-hidden="true"><img src="assets/logo-gonets.svg" width="32" height="32" alt="" /></span><span class="logo__text">Гонец</span></a>
+        <p class="footer__tagline">Доставка по Москве и области. Если что-то не так — напишите, не молчите в сторону чата.</p>
       </div>
       <div class="footer__col">
         <h4 class="footer__heading">Сервис</h4>
@@ -369,7 +369,7 @@
       </div>
     </div>
     <div class="container footer__bottom">
-      <p>© 2026 ООО «Гонец». Демо-лендинг — замените реквизиты и юридический блок перед публикацией.</p>
+      <p>© 2026 ООО «Гонец». Тексты и реквизиты — черновик; перед запуском проверьте юрблок с бухгалтерией.</p>
     </div>
   </footer>
 
