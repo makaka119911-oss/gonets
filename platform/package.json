@@ -1,0 +1,13 @@
+{
+  "name": "gonets-platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @gonets/web run dev",
+    "dev:api": "npm --workspace @gonets/api run start:dev",
+    "build": "npm run --workspaces build"
+  }
+}

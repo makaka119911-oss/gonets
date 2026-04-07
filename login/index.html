@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гонец — Вход</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/icons.css" />
+  <link rel="icon" href="../assets/logo-gonets.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../" class="logo"><span class="logo__mark" aria-hidden="true"><img src="../assets/logo-gonets.svg" width="36" height="36" alt="" /></span>Гонец</a>
+      <nav class="nav is-open">
+        <a href="../calculate/" class="nav__link">Калькулятор</a>
+        <a href="../tracking/" class="nav__link">Трекинг</a>
+        <a href="../history/" class="nav__link">История</a>
+        <a href="../login/" class="nav__link">Вход</a>
+      </nav>
+    </div>
+  </header>
+  <main class="section">
+    <div class="container">
+      <header class="section__head"><h1 class="section__title">Вход в кабинет</h1></header>
+      <div class="tariffs">
+        <form id="login-form" class="calc__grid">
+          <label class="calc__field"><span>Телефон</span><input name="phone" value="+79990000001" /></label>
+          <label class="calc__field"><span>Пароль</span><input type="password" name="password" value="123456" /></label>
+          <button class="btn btn--primary" type="submit">Войти</button>
+        </form>
+        <p id="login-result" class="calc__eta"></p>
+      </div>
+    </div>
+  </main>
+  <script>window.APP_ROOT = "..";</script>
+  <script src="../js/mock-api.js"></script>
+  <script src="../js/pages-login.js"></script>
+</body>
+</html>

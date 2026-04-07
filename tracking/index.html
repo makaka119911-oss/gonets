@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гонец — Трекинг</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/icons.css" />
+  <link rel="icon" href="../assets/logo-gonets.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../" class="logo"><span class="logo__mark" aria-hidden="true"><img src="../assets/logo-gonets.svg" width="36" height="36" alt="" /></span>Гонец</a>
+      <nav class="nav is-open">
+        <a href="../calculate/" class="nav__link">Калькулятор</a>
+        <a href="../tracking/" class="nav__link">Трекинг</a>
+        <a href="../history/" class="nav__link">История</a>
+        <a href="../login/" class="nav__link">Вход</a>
+      </nav>
+    </div>
+  </header>
+  <main class="section">
+    <div class="container">
+      <header class="section__head">
+        <h1 class="section__title">Трекинг заказа</h1>
+        <p class="section__subtitle">Демо: заказ GN-20481</p>
+      </header>
+      <div class="tariffs" id="tracking-card">Загрузка...</div>
+    </div>
+  </main>
+  <script>window.APP_ROOT = "..";</script>
+  <script src="../js/mock-api.js"></script>
+  <script src="../js/pages-tracking.js"></script>
+</body>
+</html>

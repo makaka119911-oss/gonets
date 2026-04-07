@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String         @id @default(cuid())
+  phone        String         @unique
+  name         String
+  role         UserRole       @default(CLIENT)
+  passwordHash String
+  createdAt    DateTime       @default(now())
+  orders       Order[]        @relation("ClientOrders")
+  refreshTokens RefreshToken[]
+}
+
+model RefreshToken {
+  id        String    @id @default(cuid())
+  tokenHash String    @unique
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  revokedAt DateTime?
+  createdAt DateTime  @default(now())
+}
+
+model Order {
+  id        String      @id @default(cuid())
+  code      String      @unique
+  from      String
+  to        String
+  status    OrderStatus @default(CREATED)
+  price     Int
+  createdAt DateTime    @default(now())
+  clientId  String
+  client    User        @relation("ClientOrders", fields: [clientId], references: [id])
+  events    OrderEvent[]
+}
+
+model OrderEvent {
+  id        String   @id @default(cuid())
+  orderId   String
+  title     String
+  createdAt DateTime @default(now())
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+enum UserRole {
+  CLIENT
+  COURIER
+  ADMIN
+}
+
+enum OrderStatus {
+  CREATED
+  COURIER_ASSIGNED
+  COURIER_ON_WAY
+  PICKED_UP
+  DELIVERED
+  CANCELED
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#171a21" />
+  <title>Гонец — Калькулятор</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/icons.css" />
+  <link rel="icon" href="../assets/logo-gonets.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../" class="logo"><span class="logo__mark" aria-hidden="true"><img src="../assets/logo-gonets.svg" width="36" height="36" alt="" /></span>Гонец</a>
+      <nav class="nav is-open">
+        <a href="../calculate/" class="nav__link">Калькулятор</a>
+        <a href="../tracking/" class="nav__link">Трекинг</a>
+        <a href="../history/" class="nav__link">История</a>
+        <a href="../login/" class="nav__link">Вход</a>
+      </nav>
+    </div>
+  </header>
+  <main class="section">
+    <div class="container">
+      <header class="section__head">
+        <h1 class="section__title">Калькулятор доставки</h1>
+      </header>
+      <div class="calc">
+        <form class="calc__form" id="calc-form">
+          <div class="calc__grid">
+            <label class="calc__field"><span>Расстояние (км)</span><input name="distance" type="number" value="10" /></label>
+            <label class="calc__field"><span>Вес (кг)</span><input name="weight" type="number" step="0.1" value="2.0" /></label>
+            <label class="calc__field"><span>Тип</span><select name="type"><option value="walk">Пеший</option><option value="car">Авто</option><option value="cargo">Грузовой</option></select></label>
+            <label class="calc__field"><span>Срочность</span><select name="urgency"><option value="asap">Срочно</option><option value="plan">Ко времени</option></select></label>
+          </div>
+          <div class="calc__actions"><button class="btn btn--primary" type="submit">Рассчитать</button></div>
+        </form>
+        <aside class="calc__result" id="result"><p class="calc__label">Ожидание расчета</p></aside>
+      </div>
+    </div>
+  </main>
+  <script>window.APP_ROOT = "..";</script>
+  <script src="../js/mock-api.js"></script>
+  <script src="../js/pages-calculate.js"></script>
+</body>
+</html>
