@@ -33,9 +33,9 @@
     getOrder: function (id) {
       return Promise.all([readJson("orders.json"), readJson("tracking-events.json")]).then(function (res) {
         var order = res[0].find(function (o) {
-          return o.id === id;
+          return o.id === id || o.code === id;
         });
-        return wait({ order: order, events: res[1][id] || [] });
+        return wait({ order: order, events: (order && res[1][order.id]) || [] });
       });
     },
     login: function (phone, password) {

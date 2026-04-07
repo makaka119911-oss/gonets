@@ -26,7 +26,7 @@
 - `docs/MVP_SCOPE.md` — зафиксированный объем MVP.
 - `docs/ARCHITECTURE_DRAFT.md` — черновик архитектуры.
 - `docs/FIGMA_BRIEF_WEB_MOBILE.md` — ТЗ для дизайнера.
-- `platform/` — стартовый каркас monorepo Next.js + NestJS.
+- `platform/` — monorepo Next.js + NestJS + Prisma: заказы в БД с **категориями отправлений** (еда, посылки, документы, товары, крупногабарит), **ролями** (клиент, курьер, продавец, админ), **статусами** и **трекингом** (`OrderEvent`). Описание полей: [docs/DOMAIN_MODEL.md](docs/DOMAIN_MODEL.md).
 
 ## Как запустить
 

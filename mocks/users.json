@@ -5,5 +5,26 @@
     "password": "123456",
     "name": "Илья Янчук",
     "role": "client"
+  },
+  {
+    "id": "u2",
+    "phone": "+79990000002",
+    "password": "123456",
+    "name": "Курьер Тест",
+    "role": "courier"
+  },
+  {
+    "id": "u3",
+    "phone": "+79990000003",
+    "password": "123456",
+    "name": "Магазин «Тест»",
+    "role": "seller"
+  },
+  {
+    "id": "u4",
+    "phone": "+79990000004",
+    "password": "123456",
+    "name": "Админ",
+    "role": "admin"
   }
 ]

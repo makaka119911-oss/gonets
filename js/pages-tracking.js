@@ -7,15 +7,31 @@
       el.textContent = "Заказ не найден";
       return;
     }
+    var o = data.order;
     var steps = data.events
       .map(function (e) {
         return "<li><strong>" + e.time + "</strong> — " + e.title + "</li>";
       })
       .join("");
     el.innerHTML =
-      "<h3>" + data.order.id + "</h3>" +
-      "<p>" + data.order.from + " → " + data.order.to + "</p>" +
-      "<p>Статус: " + data.order.status + ", осталось ~" + data.order.etaMin + " мин</p>" +
-      "<ul>" + steps + "</ul>";
+      "<h3>" +
+      o.id +
+      "</h3>" +
+      "<p>" +
+      o.from +
+      " → " +
+      o.to +
+      "</p>" +
+      "<p>Категория: " +
+      (o.shipmentCategoryLabel || o.shipmentCategory || "—") +
+      "</p>" +
+      "<p>Статус: " +
+      (o.statusLabel || o.status) +
+      ", осталось ~" +
+      o.etaMin +
+      " мин</p>" +
+      "<ul>" +
+      steps +
+      "</ul>";
   });
 })();

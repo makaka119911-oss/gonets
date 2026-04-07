@@ -8,13 +8,15 @@ datasource db {
 }
 
 model User {
-  id           String         @id @default(cuid())
-  phone        String         @unique
-  name         String
-  role         UserRole       @default(CLIENT)
-  passwordHash String
-  createdAt    DateTime       @default(now())
-  orders       Order[]        @relation("ClientOrders")
+  id            String         @id @default(cuid())
+  phone         String         @unique
+  name          String
+  role          UserRole       @default(CLIENT)
+  passwordHash  String
+  createdAt     DateTime       @default(now())
+  orders        Order[]        @relation("ClientOrders")
+  courierOrders Order[]        @relation("CourierOrders")
+  sellerOrders  Order[]        @relation("SellerOrders")
   refreshTokens RefreshToken[]
 }
 
@@ -29,16 +31,21 @@ model RefreshToken {
 }
 
 model Order {
-  id        String      @id @default(cuid())
-  code      String      @unique
-  from      String
-  to        String
-  status    OrderStatus @default(CREATED)
-  price     Int
-  createdAt DateTime    @default(now())
-  clientId  String
-  client    User        @relation("ClientOrders", fields: [clientId], references: [id])
-  events    OrderEvent[]
+  id                 String            @id @default(cuid())
+  code               String            @unique
+  from               String
+  to                 String
+  status             OrderStatus       @default(CREATED)
+  price              Int
+  shipmentCategory   ShipmentCategory  @default(PARCEL)
+  createdAt          DateTime          @default(now())
+  clientId           String
+  client             User              @relation("ClientOrders", fields: [clientId], references: [id])
+  courierId          String?
+  courier            User?             @relation("CourierOrders", fields: [courierId], references: [id])
+  sellerId           String?
+  seller             User?             @relation("SellerOrders", fields: [sellerId], references: [id])
+  events             OrderEvent[]
 }
 
 model OrderEvent {
@@ -52,14 +59,28 @@ model OrderEvent {
 enum UserRole {
   CLIENT
   COURIER
+  SELLER
   ADMIN
+}
+
+/// Категория отправления: еда, посылки, документы, товары, крупногабарит
+enum ShipmentCategory {
+  FOOD
+  PARCEL
+  DOCUMENTS
+  GOODS
+  BULKY
 }
 
 enum OrderStatus {
   CREATED
+  CONFIRMED
   COURIER_ASSIGNED
   COURIER_ON_WAY
   PICKED_UP
+  IN_TRANSIT
+  AT_RECIPIENT
   DELIVERED
   CANCELED
+  FAILED
 }

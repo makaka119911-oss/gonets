@@ -1,6 +1,10 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, Req, UseGuards } from "@nestjs/common";
 import { AuthGuard } from "@nestjs/passport";
+import { UserRole } from "@prisma/client";
+import type { Request } from "express";
 import { OrdersService } from "./orders.service";
+
+type Authed = Request & { user: { userId: string; role: UserRole } };
 
 @Controller("orders")
 export class OrdersController {
@@ -15,13 +19,13 @@ export class OrdersController {
 
   @Get()
   @UseGuards(AuthGuard("jwt"))
-  list() {
-    return this.ordersService.list();
+  list(@Req() req: Authed) {
+    return this.ordersService.listForUser(req.user.userId, req.user.role);
   }
 
   @Get(":id")
   @UseGuards(AuthGuard("jwt"))
-  get(@Param("id") id: string) {
-    return this.ordersService.get(id);
+  get(@Param("id") id: string, @Req() req: Authed) {
+    return this.ordersService.getForUser(id, req.user.userId, req.user.role);
   }
 }

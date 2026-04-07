@@ -13,14 +13,22 @@ Monorepo starter for:
 - `POST /api/auth/refresh` — ротация refresh
 - `POST /api/auth/logout` — отзыв и очистка cookies
 - `GET /api/auth/me` — профиль по access JWT
-- Заказы `GET /api/orders` требуют `Authorization: Bearer` (или cookie `gonets_access`); **расчёт** `POST /api/orders/calculate` — без авторизации
+- Заказы `GET /api/orders` и `GET /api/orders/:id` требуют cookie `gonets_access` (или Bearer); **расчёт** `POST /api/orders/calculate` — без авторизации
+- Заказы хранятся в PostgreSQL: категории отправления (`ShipmentCategory`), статусы (`OrderStatus`), трекинг — таблица `OrderEvent`. Список заказов фильтруется по роли (клиент / курьер / продавец / админ — все). Подробнее: [../docs/DOMAIN_MODEL.md](../docs/DOMAIN_MODEL.md)
 
 ## База данных
 
 1. Поднимите PostgreSQL и скопируйте `apps/api/.env.example` в `apps/api/.env` (поправьте `DATABASE_URL` и `JWT_SECRET`).
 2. `cd platform`
-3. `npm run prisma:migrate --workspace @gonets/api`
-4. `npm run prisma:seed --workspace @gonets/api` (тестовый пользователь `+79990000001` / `123456`)
+3. `npm run prisma:migrate --workspace @gonets/api` (применит миграции, включая роли `SELLER`, категории отправлений и расширенные статусы)
+4. `npm run prisma:seed --workspace @gonets/api` — тестовые пользователи (пароль **`123456`** для всех):
+
+| Телефон | Роль |
+|---------|------|
+| `+79990000001` | клиент |
+| `+79990000002` | курьер |
+| `+79990000003` | продавец |
+| `+79990000004` | админ |
 
 ## Quick start
 
